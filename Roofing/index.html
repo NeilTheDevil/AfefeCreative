@@ -3,1185 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Roofing Specialists | Premium Roofing Services</title>
-    <meta name="description" content="Expert residential and commercial roofing services. Specialized in storm damage and insurance claims. Get your free inspection today. Call +1 (555) 012-3456.">
+    <title>Apex Roofing | Built for the Storm. Designed for the Future.</title>
+    <meta name="description" content="Premium, high-performance roofing solutions for residential and commercial properties. 24/7 emergency storm damage response.">
     
-    <!-- Preconnect to Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- CSS Design System -->
-    <style>
-        :root {
-            /* Colors */
-            --primary: #1a1d1f;
-            --primary-dark: #121416;
-            --primary-light: #2c3e50;
-            --accent: #ff9f1c; /* Vibrant Amber */
-            --accent-hover: #e68a00;
-            --bg: #f8fafc;
-            --bg-alt: #f1f5f9;
-            --bg-dark: #0f172a;
-            --white: #ffffff;
-            --text: #1e293b;
-            --text-muted: #64748b;
-            --text-light: #f8fafc;
-
-            /* Typography */
-            --font-heading: 'Barlow Condensed', sans-serif;
-            --font-body: 'Inter', sans-serif;
-
-            /* Spacing */
-            --section-padding: clamp(60px, 10vw, 120px);
-            --container: 1280px;
-            --gap: 24px;
-            --gap-lg: 48px;
-
-            /* Borders & Shadows */
-            --radius: 12px;
-            --radius-lg: 20px;
-            --radius-xl: 32px;
-            --radius-pill: 100px;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
-            --shadow-md: 0 10px 30px rgba(0,0,0,0.1);
-            --shadow-lg: 0 20px 50px rgba(0,0,0,0.15);
-
-            /* Motion */
-            --ease: cubic-bezier(0.4, 0, 0.2, 1);
-            --transition: 400ms var(--ease);
-            --transition-slow: 700ms var(--ease);
-        }
-
-        /* Reset & Base */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body { 
-            font-family: var(--font-body); 
-            background: var(--bg); 
-            color: var(--text); 
-            line-height: 1.6; 
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1, h2, h3, h4 { 
-            font-family: var(--font-heading); 
-            text-transform: uppercase; 
-            line-height: 1.05; 
-            letter-spacing: -0.02em;
-            text-wrap: balance;
-        }
-
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
-        ul { list-style: none; }
-        img { max-width: 100%; display: block; border-radius: var(--radius); }
-        button, .btn { 
-            cursor: pointer; 
-            border: none; 
-            outline: none; 
-            font-family: var(--font-heading);
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: var(--transition);
-        }
-
-        .container { 
-            max-width: var(--container); 
-            margin: 0 auto; 
-            padding: 0 24px; 
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            border-radius: var(--radius-pill);
-            font-size: 1.1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .btn-primary { 
-            background: var(--accent); 
-            color: var(--primary-dark); 
-            box-shadow: 0 4px 15px rgba(255, 159, 28, 0.3);
-        }
-        .btn-primary:hover { 
-            background: var(--accent-hover); 
-            transform: translateY(-2px); 
-            box-shadow: 0 6px 20px rgba(255, 159, 28, 0.4);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--accent);
-            color: var(--accent);
-            background: transparent;
-        }
-        .btn-outline:hover {
-            background: var(--accent);
-            color: var(--primary-dark);
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
-            transition: var(--transition);
-        }
-
-        header.scrolled {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            padding: 12px 0;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .nav-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo span { color: var(--accent); }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-        }
-
-        .nav-links a:hover { color: var(--accent); }
-
-        .nav-cta {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .phone-link {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 100vh;
-            min-height: 700px;
-            display: flex;
-            align-items: center;
-            background: var(--bg-dark);
-            overflow: hidden;
-            color: var(--white);
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-
-        .hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.6;
-            border-radius: 0;
-            transform: scale(1.05);
-            transition: transform 10s ease-out;
-        }
-
-        .hero.reveal .hero-bg img {
-            transform: scale(1);
-        }
-
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            margin-bottom: 24px;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 40px;
-            color: rgba(255,255,255,0.9);
-            max-width: 600px;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 16px;
-        }
-
-        /* Badges */
-        .badge-grid {
-            margin-top: 60px;
-            display: flex;
-            gap: 40px;
-            opacity: 0.8;
-        }
-
-        .badge-item {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .badge-number {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            line-height: 1;
-        }
-
-        .badge-text {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 600;
-        }
-
-        /* Services Bento */
-        .services {
-            padding: var(--section-padding) 0;
-            background: var(--bg);
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 60px;
-        }
-
-        .section-header h2 {
-            font-size: 3.5rem;
-            margin-bottom: 16px;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 350px);
-            gap: 24px;
-        }
-
-        .bento-item {
-            position: relative;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            background: var(--white);
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 32px;
-            color: var(--white);
-        }
-
-        .bento-item:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .bento-item img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-            border-radius: 0;
-            transition: transform 0.5s var(--ease);
-        }
-
-        .bento-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .bento-item::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            z-index: 1;
-        }
-
-        .bento-item .content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .bento-item h3 {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
-        }
-
-        .bento-1 { grid-column: span 2; }
-        .bento-2 { grid-column: span 2; }
-        .bento-3 { grid-column: span 1; }
-        .bento-4 { grid-column: span 2; }
-        .bento-5 { grid-column: span 1; }
-
-        /* Before/After Slider */
-        .before-after {
-            padding: var(--section-padding) 0;
-            background: var(--primary-dark);
-            color: var(--white);
-        }
-
-        .slider-wrapper {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16/9;
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .slider-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .slider-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0;
-        }
-
-        .img-after {
-            z-index: 1;
-            clip-path: inset(0 50% 0 0);
-        }
-
-        .handle {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 4px;
-            background: var(--accent);
-            z-index: 2;
-            cursor: ew-resize;
-        }
-
-        .handle::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
-
-        .slider-label {
-            position: absolute;
-            bottom: 24px;
-            padding: 8px 16px;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(4px);
-            font-family: var(--font-heading);
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            border-radius: var(--radius);
-            z-index: 3;
-        }
-
-        .label-before { right: 24px; }
-        .label-after { left: 24px; }
-
-        /* Claims Process */
-        .process {
-            padding: var(--section-padding) 0;
-            background: var(--bg-alt);
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-
-        .step-item {
-            position: relative;
-            text-align: left;
-        }
-
-        .step-number {
-            font-family: var(--font-heading);
-            font-size: 5rem;
-            font-weight: 800;
-            color: rgba(26, 29, 31, 0.05);
-            line-height: 0.8;
-            margin-bottom: -20px;
-        }
-
-        .step-item h3 {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step-item p {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: var(--section-padding) 0;
-            overflow: hidden;
-        }
-
-        .marquee {
-            display: flex;
-            gap: 32px;
-            padding: 20px 0;
-            animation: marquee 40s linear infinite;
-        }
-
-        .marquee:hover { animation-play-state: paused; }
-
-        .testimonial-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            width: 400px;
-            flex-shrink: 0;
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 24px;
-            font-size: 1.1rem;
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .user-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #e2e8f0;
-        }
-
-        .user-name h4 { font-size: 1.1rem; margin-bottom: 2px; }
-        .user-name span { font-size: 0.8rem; color: var(--text-muted); }
-
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-432px * 3)); }
-        }
-
-        /* FAQ */
-        .faq {
-            padding: var(--section-padding) 0;
-            background: var(--bg);
-        }
-
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        details {
-            background: var(--white);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        summary {
-            padding: 24px;
-            font-family: var(--font-heading);
-            font-size: 1.4rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        summary::after {
-            content: '+';
-            font-size: 1.8rem;
-            transition: transform 0.3s;
-        }
-
-        details[open] summary::after {
-            transform: rotate(45deg);
-        }
-
-        details[open] {
-            box-shadow: var(--shadow-md);
-        }
-
-        .answer {
-            padding: 0 24px 24px;
-            color: var(--text-muted);
-        }
-
-        /* Final CTA */
-        .final-cta {
-            padding: var(--section-padding) 0;
-            background: var(--primary);
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            align-items: center;
-        }
-
-        .cta-text h2 { font-size: 4rem; margin-bottom: 24px; }
-        .cta-text p { font-size: 1.2rem; margin-bottom: 32px; opacity: 0.8; }
-
-        .contact-form {
-            background: var(--white);
-            padding: 40px;
-            border-radius: var(--radius-xl);
-            color: var(--text);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 14px;
-            border-radius: var(--radius);
-            border: 1px solid #e2e8f0;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-
-        .contact-form .btn { width: 100%; margin-top: 10px; }
-
-        /* Footer */
-        footer {
-            padding: 80px 0 40px;
-            background: var(--primary-dark);
-            color: var(--white);
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 80px;
-        }
-
-        .footer-brand .logo { color: var(--white); margin-bottom: 24px; }
-        .footer-brand p { opacity: 0.6; line-height: 1.8; }
-
-        .footer-col h4 {
-            font-size: 1.4rem;
-            margin-bottom: 24px;
-            color: var(--accent);
-        }
-
-        .footer-col ul li { margin-bottom: 12px; }
-        .footer-col ul li a { opacity: 0.6; }
-        .footer-col ul li a:hover { opacity: 1; color: var(--accent); }
-
-        .footer-bottom {
-            padding-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9rem;
-            opacity: 0.5;
-        }
-
-        /* Floating Badge */
-        .floating-offer {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 999;
-            background: var(--accent);
-            color: var(--primary-dark);
-            padding: 20px;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            width: 250px;
-            transform: translateX(120%);
-            transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
-        .floating-offer.show { transform: translateX(0); }
-
-        .floating-offer h5 { font-family: var(--font-heading); font-size: 1.5rem; line-height: 1; margin-bottom: 8px; }
-        .floating-offer p { font-size: 0.85rem; margin-bottom: 12px; font-weight: 500; }
-        .close-offer { position: absolute; top: 10px; right: 10px; font-size: 1.4rem; cursor: pointer; }
-
-        /* Scroll Reveals */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s var(--ease);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 1024px) {
-            .bento-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(4, 300px);
-            }
-            .bento-1, .bento-2, .bento-4 { grid-column: span 2; }
-            .cta-content { grid-template-columns: 1fr; gap: 60px; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 3.5rem; }
-            .badge-grid { flex-direction: column; gap: 20px; }
-            .process-steps { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-            .section-header h2 { font-size: 3rem; }
-            .floating-offer { left: 20px; right: 20px; width: auto; }
-        }
-
-        /* Mobile Call Bar */
-        .mobile-call-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--primary);
-            display: flex;
-            padding: 12px;
-            z-index: 1001;
-            box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-call-bar { display: flex; }
-            body { padding-bottom: 70px; }
-        }
-
-        .mobile-call-bar .btn { flex: 1; border-radius: var(--radius); }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <header>
-        <div class="container nav-wrapper">
-            <a href="#" class="logo">APEX<span>ROOFING</span></a>
-            <nav class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#insurance">Insurance</a>
-                <a href="#work">Our Work</a>
-                <a href="#faq">FAQ</a>
-            </nav>
-            <div class="nav-cta">
-                <a href="tel:+15550123456" class="phone-link"><svg width="20" height="20" fill="var(--accent)" viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg> (555) 012-3456</a>
-                <a href="#quote" class="btn btn-primary">Free Inspection</a>
+    <!-- Emergency Weather Bar -->
+    <div class="emergency-bar">
+        <div class="container">
+            <p><i data-lucide="cloud-lightning"></i> <strong>STORM ALERT:</strong> Emergency response teams on standby. Call 1-800-APEX-ROOF</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">
+                <i data-lucide="shield-check" class="logo-icon"></i>
+                <span>Apex <strong>Roofing</strong></span>
             </div>
+            <nav class="nav">
+                <a href="#services">Services</a>
+                <a href="#about">The Standard</a>
+                <a href="#quote" class="btn btn-primary">Get a Quote</a>
+            </nav>
+            <button class="mobile-toggle"><i data-lucide="menu"></i></button>
         </div>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-bg">
-                <img src="https://images.unsplash.com/photo-1632759162353-332f6ad6117d?auto=format&fit=crop&q=80&w=2000" alt="Apex Roofing premium residential project">
+                <img src="https://images.unsplash.com/photo-1635843104321-42629b300431?auto=format&fit=crop&q=80&w=2000" alt="Modern Roof Installation" class="hero-img">
+                <div class="hero-overlay"></div>
             </div>
             <div class="container hero-content">
-                <h1 class="reveal">Built to weather any storm.</h1>
-                <p class="reveal">We don't just provide roofing services; we give you peace of mind. High-performance materials, expert craftsmanship, and the fastest insurance claim processing in the region.</p>
-                <div class="hero-btns reveal">
-                    <a href="#quote" class="btn btn-primary">Get My Free Quote</a>
-                    <a href="#work" class="btn btn-outline">View Our Work</a>
-                </div>
-                <div class="badge-grid reveal">
-                    <div class="badge-item">
-                        <span class="badge-number">15+</span>
-                        <span class="badge-text">Years Excellence</span>
-                    </div>
-                    <div class="badge-item">
-                        <span class="badge-number">2.4k</span>
-                        <span class="badge-text">Homes Protected</span>
-                    </div>
-                    <div class="badge-item">
-                        <span class="badge-number">4.9</span>
-                        <span class="badge-text">Star Rating</span>
+                <div class="hero-text reveal">
+                    <span class="badge">Professional Resilience</span>
+                    <h1>Built for the <span class="accent">Storm.</span> <br>Designed for the <span class="accent">Future.</span></h1>
+                    <p>Don't wait for a leak to compromise your investment. Get a cinematic-grade roof that offers 50-year protection and modern architectural appeal.</p>
+                    <div class="hero-actions">
+                        <a href="#quote" class="btn btn-primary btn-large">Start My Inspection</a>
+                        <a href="#services" class="btn btn-outline">Explore Systems</a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Bento Services -->
         <section id="services" class="services">
             <div class="container">
                 <div class="section-header reveal">
-                    <h2>Superior Systems</h2>
-                    <p>From total replacement to emergency storm repair, our team specializes in high-durability roofing systems designed for the local climate.</p>
+                    <h2>Engineered <span class="accent">Excellence</span></h2>
+                    <p>We specialized in high-performance roofing systems that stand up to North America's harshest climates.</p>
                 </div>
                 <div class="bento-grid">
-                    <div class="bento-item bento-1 reveal">
-                        <img src="https://images.unsplash.com/photo-1620310243171-46ab30e2f5b4?auto=format&fit=crop&q=80&w=1200" alt="New Architectural Shingle Installation">
-                        <div class="content">
-                            <h3>Residential</h3>
-                            <p>Full-system replacement with lifetime warranties.</p>
+                    <div class="bento-item main reveal">
+                        <img src="https://images.unsplash.com/photo-1628160271562-bc9197a9f81a?auto=format&fit=crop&q=80&w=1000" alt="Residential Roofing">
+                        <div class="bento-content">
+                            <h3>Residential Systems</h3>
+                            <p>Architectural shingles and modern metal options for the modern homeowner.</p>
                         </div>
                     </div>
-                    <div class="bento-item bento-2 reveal" style="transition-delay: 100ms;">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" alt="Storm Damage Repair">
-                        <div class="content">
-                            <h3>Storm Repair</h3>
-                            <p>Rapid response damage assessment and structural fixing.</p>
-                        </div>
+                    <div class="bento-item reveal delay-1">
+                        <i data-lucide="building-2"></i>
+                        <h3>Commercial</h3>
+                        <p>TPO, EPDM, and flat-roof specialized systems.</p>
                     </div>
-                    <div class="bento-item bento-3 reveal" style="transition-delay: 200ms;">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Commercial Roofing">
-                        <div class="content">
-                            <h3>Flat Roofs</h3>
-                        </div>
+                    <div class="bento-item reveal delay-2">
+                        <i data-lucide="wind"></i>
+                        <h3>Storm Response</h3>
+                        <p>Rapid tarping and structural assessment.</p>
                     </div>
-                    <div class="bento-item bento-4 reveal">
-                        <img src="https://images.unsplash.com/photo-1626079085813-f667bb4762db?auto=format&fit=crop&q=80&w=1200" alt="Premium Standing Seam Metal Roofing">
-                        <div class="content">
-                            <h3>Premium Metal</h3>
-                            <p>Modern, eco-friendly metal roofing that lasts for generations.</p>
-                        </div>
-                    </div>
-                    <div class="bento-item bento-5 reveal" style="transition-delay: 150ms;">
-                        <img src="https://images.unsplash.com/photo-1591588582259-e675bd2e6088?w=800&q=80" alt="Gutter Systems">
-                        <div class="content">
-                            <h3>Gutters</h3>
+                    <div class="bento-item accent-bg reveal delay-3">
+                        <div class="stat-group">
+                            <span class="stat-number" data-target="2500">0</span>
+                            <span class="stat-label">Homes Protected</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="work" class="before-after">
+        <!-- Trust Section -->
+        <section id="about" class="trust">
             <div class="container">
-                <div class="section-header reveal">
-                    <h2>Precision Restoration</h2>
-                    <p>Witness the transformation of aged, damaged structures into modern, fortified rooftops.</p>
-                </div>
-                <div class="slider-wrapper reveal">
-                    <div class="slider-img img-before">
-                        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80" alt="Roof Before">
-                        <div class="slider-label label-before">Before Assessment</div>
+                <div class="trust-inner">
+                    <div class="trust-content reveal">
+                        <h2>The <span class="accent">Apex</span> Standard</h2>
+                        <ul class="trust-list">
+                            <li>
+                                <div class="icon-wrap"><i data-lucide="check-circle"></i></div>
+                                <div>
+                                    <h4>Triple-Point Inspection</h4>
+                                    <p>Every fastener and seam is checked by our independent drone survey.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-wrap"><i data-lucide="shield"></i></div>
+                                <div>
+                                    <h4>50-Year "The Vault" Warranty</h4>
+                                    <p>We don't just patch; we provide a lifetime of structural security.</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="slider-img img-after" id="after-img">
-                        <img src="https://images.unsplash.com/photo-1634712282287-14ed57b9cc89?auto=format&fit=crop&q=80&w=1200" alt="Fortified Restoration Finished Roof">
-                        <div class="slider-label label-after">Final Restoration</div>
+                    <div class="trust-visual reveal delay-1">
+                        <img src="https://images.unsplash.com/photo-1574360522682-1719b6279f6e?auto=format&fit=crop&q=80&w=1000" alt="Roofing Textures" class="rounded-img">
                     </div>
-                    <div class="handle" id="slider-handle"></div>
                 </div>
             </div>
         </section>
 
-        <section id="insurance" class="process">
+        <!-- CTA Form -->
+        <section id="quote" class="cta">
             <div class="container">
-                <div class="section-header reveal">
-                    <h2>0% Insurance Stress</h2>
-                    <p>Navigating claims shouldn't be your job. We handle every step of the process with your provider.</p>
-                </div>
-                <div class="process-steps">
-                    <div class="step-item reveal">
-                        <div class="step-number">01</div>
-                        <h3>Inspection</h3>
-                        <p>We perform a detailed drone and manual inspection of every shingle.</p>
+                <div class="cta-card reveal">
+                    <div class="cta-header">
+                        <h2>Secure Your <span class="accent">Investment</span></h2>
+                        <p>Request a 4K drone inspection and high-resolution quote within 24 hours.</p>
                     </div>
-                    <div class="step-item reveal" style="transition-delay: 100ms;">
-                        <div class="step-number">02</div>
-                        <h3>Documentation</h3>
-                        <p>Our team collects the visual proof required by insurance Adjusters.</p>
-                    </div>
-                    <div class="step-item reveal" style="transition-delay: 200ms;">
-                        <div class="step-number">03</div>
-                        <h3>Negotiation</h3>
-                        <p>We work directly with your provider to ensure full coverage.</p>
-                    </div>
-                    <div class="step-item reveal" style="transition-delay: 300ms;">
-                        <div class="step-number">04</div>
-                        <h3>Zero-Hassle Build</h3>
-                        <p>Your new roof is installed with minimal disruption to your day.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials">
-            <div class="marquee-container">
-                <div class="marquee">
-                    <!-- Duplicate for infinite scroll effect -->
-                    <div class="testimonial-card">
-                        <p>"The team at Apex was incredible. They identified storm damage I didn't even know I had and handled the entire claim. My new roof looks stunning."</p>
-                        <div class="user-info">
-                            <div class="user-img"></div>
-                            <div class="user-name"><h4>Sarah Jenkins</h4><span>Oakwood Resident</span></div>
+                    <form class="cta-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="(555) 000-0000" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service Needed</label>
+                                <select id="service">
+                                    <option value="residential">Residential Roofing</option>
+                                    <option value="commercial">Commercial Roofing</option>
+                                    <option value="storm">Storm Damage Repair</option>
+                                    <option value="inspection">Maintenance Inspection</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Professional, fast, and clean. They stripped the old roof and installed the new one in less than 48 hours. Five stars."</p>
-                        <div class="user-info">
-                            <div class="user-img"></div>
-                            <div class="user-name"><h4>Mark Thompson</h4><span>Commercial Property Owner</span></div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Communication was great throughout. They explained the differences in materials clearly. No pressure, just great service."</p>
-                        <div class="user-info">
-                            <div class="user-img"></div>
-                            <div class="user-name"><h4>Linda Garcia</h4><span>Homeowner</span></div>
-                        </div>
-                    </div>
-                    <!-- Clones -->
-                    <div class="testimonial-card">
-                        <p>"The team at Apex was incredible. They identified storm damage I didn't even know I had and handled the entire claim. My new roof looks stunning."</p>
-                        <div class="user-info">
-                            <div class="user-img"></div>
-                            <div class="user-name"><h4>Sarah Jenkins</h4><span>Oakwood Resident</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="faq" class="faq">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2>Clear Answers</h2>
-                    <p>Everything you need to know about your roofing project.</p>
-                </div>
-                <div class="faq-list">
-                    <details class="reveal">
-                        <summary>How long does a roof replacement take?</summary>
-                        <div class="answer">
-                            Most residential roof replacements are completed in 1 to 2 days, depending on the size and complexity of the structure. We prioritize speed without compromising on safety or quality.
-                        </div>
-                    </details>
-                    <details class="reveal">
-                        <summary>Will my insurance cover the full cost?</summary>
-                        <div class="answer">
-                            If your roof has suffered verifiable storm or wind damage, your provider typically covers the entire cost minus your deductible. Our specialists work to maximize your coverage.
-                        </div>
-                    </details>
-                    <details class="reveal">
-                        <summary>What materials do you recommend?</summary>
-                        <div class="answer">
-                            We offer architectural shingles, metal roofing, and composite slate. The best choice depends on your budget, house style, and desired energy efficiency goals.
-                        </div>
-                    </details>
-                    <details class="reveal">
-                        <summary>Are you licensed and insured?</summary>
-                        <div class="answer">
-                            Yes, Apex Roofing is fully licensed in the state and carries multi-million dollar general liability and workers' compensation insurance for your protection.
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <section id="quote" class="final-cta">
-            <div class="container cta-content">
-                <div class="cta-text reveal">
-                    <h2>Protect your investment today.</h2>
-                    <p>Don't wait for a small leak to become a massive renovation. Get a comprehensive, expert inspection of your roof at no cost to you.</p>
-                    <div class="badge-item reveal" style="opacity: 1;">
-                        <span class="badge-number">60+</span>
-                        <span class="badge-text" style="color: var(--white); opacity: 0.6;">Minutes - Our typical callback time</span>
-                    </div>
-                </div>
-                <div class="contact-form reveal">
-                    <form id="roofing-form">
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="tel" placeholder="(555) 000-0000" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Service Needed</label>
-                            <select required>
-                                <option value="">Select Service...</option>
-                                <option value="repair">Roof Repair</option>
-                                <option value="replacement">Full Replacement</option>
-                                <option value="storm">Storm Damage Audit</option>
-                                <option value="gutter">Gutters/Maintenance</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Start Free Inspection</button>
+                        <button type="submit" class="btn btn-primary btn-full">Generate My Proposal</button>
                     </form>
-                    <p style="font-size: 0.8rem; margin-top: 16px; color: var(--text-muted); opacity: 0.8;">Licensed, Insured & Local. We respect your privacy.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="logo">APEX<span>ROOFING</span></a>
-                    <p>Providing premium residential and commercial roofing solutions for over 15 years. Built on trust, quality materials, and expert craftsmanship.</p>
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                     <i data-lucide="shield-check" class="logo-icon"></i>
+                     <span>Apex <strong>Roofing</strong></span>
                 </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">Residential</a></li>
-                        <li><a href="#">Commercial</a></li>
-                        <li><a href="#">Storm Damage</a></li>
-                        <li><a href="#">Metal Roofing</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Reviews</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="tel:+15550123456">(555) 012-3456</a></li>
-                        <li><a href="mailto:quote@apexroofing.com">quote@apexroofing.com</a></li>
-                        <li>123 Roofing Lane, Suite 100<br>Your City, State 12345</li>
-                    </ul>
-                </div>
+                <p>Establishing the gold standard in modern vertical protection since 2008.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Apex Roofing Specialists. All rights reserved.</p>
-                <div class="legal">
-                    <a href="#" style="margin-right: 20px;">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Emergency</a>
             </div>
         </div>
     </footer>
 
-    <div class="floating-offer" id="offer-badge">
-        <span class="close-offer" id="close-offer">&times;</span>
-        <h5>Free Wind Audit</h5>
-        <p>Possible storm damage? Get a free 21-point structural roof audit today.</p>
-        <a href="#quote" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Claim Now</a>
-    </div>
-
-    <div class="mobile-call-bar">
-        <a href="tel:+15550123456" class="btn btn-primary">Call (555) 012-3456</a>
-    </div>
-
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
     <script>
-        // Header Scroll Effect
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Intersection Observer for Scroll Reveals
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Before/After Slider
-        const handle = document.getElementById('slider-handle');
-        const afterImg = document.getElementById('after-img');
-        const sliderWrapper = document.querySelector('.slider-wrapper');
-
-        if (handle && afterImg && sliderWrapper) {
-            let isDragging = false;
-
-            const moveSlider = (x) => {
-                let rect = sliderWrapper.getBoundingClientRect();
-                let position = ((x - rect.left) / rect.width) * 100;
-                
-                if (position < 0) position = 0;
-                if (position > 100) position = 100;
-
-                handle.style.left = `${position}%`;
-                afterImg.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
-            };
-
-            const onMove = (e) => {
-                if (!isDragging) return;
-                let x = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-                moveSlider(x);
-            };
-
-            handle.addEventListener('mousedown', () => isDragging = true);
-            handle.addEventListener('touchstart', () => isDragging = true, {passive: true});
-            window.addEventListener('mouseup', () => isDragging = false);
-            window.addEventListener('touchend', () => isDragging = false);
-            window.addEventListener('mousemove', onMove);
-            window.addEventListener('touchmove', onMove, {passive: true});
-        }
-
-        // Floating Offer Logic
-        const offerBadge = document.getElementById('offer-badge');
-        const closeOffer = document.getElementById('close-offer');
-
-        setTimeout(() => {
-            if (offerBadge) offerBadge.classList.add('show');
-        }, 5000);
-
-        if (closeOffer) {
-            closeOffer.addEventListener('click', () => {
-                offerBadge.classList.remove('show');
-            });
-        }
-
-        // Form Submission Mock
-        document.getElementById('roofing-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            const originalText = btn.innerText;
-            btn.innerText = 'Request Sent!';
-            btn.style.background = '#10b981';
-            e.target.reset();
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.style.background = 'var(--accent)';
-            }, 3000);
-        });
-
-        // Trigger Hero Zoom Animation on Load
-        window.addEventListener('load', () => {
-            document.querySelector('.hero').classList.add('reveal');
-        });
-    </script>
-
-    <!-- SEO Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "RoofingContractor",
-      "name": "Apex Roofing Specialists",
-      "image": "images/roofing_hero_1774372190037.png",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Roofing Lane, Suite 100",
-        "addressLocality": "Your City",
-        "addressRegion": "ST",
-        "postalCode": "12345",
-        "addressCountry": "US"
-      },
-      "telephone": "+15550123456",
-      "priceRange": "$$",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "18:00"
-        }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "240"
-      }
-    }
+        lucide.createIcons();
     </script>
 </body>
 </html>
