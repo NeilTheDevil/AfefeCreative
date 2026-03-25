@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Timer App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="glass-panel">
+            <h1 class="app-title">Focus Timer</h1>
+            
+            <div class="preset-container">
+                <select id="preset-select" class="preset-dropdown">
+                    <option value="1500" selected>Pomodoro (25m)</option>
+                    <option value="300">Short Break (5m)</option>
+                    <option value="900">Long Break (15m)</option>
+                    <option value="10">Test (10s)</option>
+                </select>
+            </div>
+
+            <div class="timer-display-container">
+                <svg class="progress-ring" width="240" height="240">
+                    <circle class="progress-ring__background" stroke="rgba(255, 255, 255, 0.1)" stroke-width="8" fill="transparent" r="110" cx="120" cy="120"/>
+                    <circle class="progress-ring__circle" stroke="url(#gradient)" stroke-width="8" fill="transparent" r="110" cx="120" cy="120" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ff00cc" />
+                            <stop offset="100%" stop-color="#333399" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="time-display" id="time-display">25:00</div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-secondary" id="reset-btn" aria-label="Reset Timer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                </button>
+                <button class="btn btn-primary" id="play-pause-btn" aria-label="Play/Pause">
+                    <svg id="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    <svg id="pause-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
